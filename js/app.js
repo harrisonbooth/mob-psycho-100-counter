@@ -63,6 +63,12 @@ App.prototype = {
         break
     }
 
+    if(this.canChangeCounter === false) {
+      document.body.style.filter = "blur(0px)"
+      this.playState = "paused"
+      this.animationName = "shake"
+    }
+
     document.getElementById('counter-container').style.color = this.color
     document.body.style.animationName = this.animationName
     document.body.style.animationPlayState = this.playState
