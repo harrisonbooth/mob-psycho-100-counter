@@ -3,14 +3,6 @@ var App = function() {
   var decrementButton = document.getElementById('decrease-counter-button')
   this.displayText = document.getElementById('display-text')
 
-  // incrementButton.addEventListener('click', function() {
-  //   this.changeCounter(this.incrementCounter)
-  // }.bind(this))
-
-  // decrementButton.addEventListener('click', function() {
-  //   this.changeCounter(this.decrementCounter)
-  // }.bind(this))
-
   window.addEventListener('keydown', function(event) {
     if(!this.canChangeCounter) return
     switch(event.keyCode) {
@@ -37,32 +29,6 @@ App.prototype = {
   },
 
   changeDisplayText: function(number) {
-    var color = "white"
-    var playState = "paused"
-    var animationName = "shake"
-
-    // if(number <= 50) {
-    // } else if(number <= 70) {
-    //   color = 'khaki'
-    //   playState = "paused"
-    // } else if(number <= 90) {
-    //   color = 'gold'
-    //   animationName = "shake"
-    //   playState = "running"
-    // } else if(number <= 95) {
-    //   animationName = "shake-with-blur"
-    //   playState = "running"
-    //   color = 'orange'
-    // } else if(number < 100) {
-    //   animationName = "shake-with-lots-of-blur"
-    //   playState = "running"
-    //   color = 'orangered'
-    // } else {
-    //   playState = "paused"
-    //   color = "red"
-    //   document.body.style.filter = "blur(0px)"
-    // }
-
     switch(number) {
       case 49:
         this.color = "white"
