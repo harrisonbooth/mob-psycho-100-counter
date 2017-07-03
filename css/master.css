@@ -23,13 +23,6 @@ body {
   height: 20%;
 }
 
-.counter-control-button {
-  display: block;
-  height: 40%;
-  width: auto;
-  display: none;
-}
-
 #counter-display {
   font-family: 'Mob Psycho 100';
   font-size: 13em;
@@ -39,10 +32,6 @@ body {
 
 #percent-sign {
   font-size: 0.5em;
-}
-
-#counter-controls {
-  height: 100%;
 }
 
 @font-face {
