@@ -7,9 +7,11 @@ var App = function() {
     if(!this.canChangeCounter) return
     switch(event.keyCode) {
       case 38:
+        event.preventDefault()
         this.changeCounter(this.incrementCounter)
         break
       case 40:
+        event.preventDefault()
         this.changeCounter(this.decrementCounter)
         break
     }
