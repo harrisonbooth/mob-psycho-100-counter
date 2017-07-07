@@ -19,6 +19,7 @@ var App = function() {
 
   var isOnMobile  = window.matchMedia("only screen and ( max-device-width: 750px )").matches
   if(isOnMobile) {
+    document.body.style.backgroundColor = "red"
     window.addEventListener("click", function(event) {
       if(!this.canChangeCounter) return
       if(event.y > window.innerHeight/2) {
