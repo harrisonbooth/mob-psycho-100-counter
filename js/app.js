@@ -17,8 +17,20 @@ var App = function() {
     }
   }.bind(this))
 
+  var isOnMobile  = window.matchMedia("only screen and ( max-device-width: 750px )").matches
+  if(isOnMobile) {
+    window.addEventListener("click", function(event) {
+      if(!this.canChangeCounter) return
+      if(event.y > window.innerHeight/2) {
+        this.changeCounter(this.decrementCounter)
+      } else {
+        this.changeCounter(this.incrementCounter)
+      }
+    }.bind(this))
+  }
+
   this.canChangeCounter = true
-  this.counter = 0
+  this.counter = 79
 
   this.playState = "paused"
   this.animationName = "shake"
@@ -133,7 +145,7 @@ App.prototype = {
         document.body.style.backgroundImage = "none"
       }
       this.countDown()
-    }.bind(this), 45)
+    }.bind(this), 43)
   }
 }
 
