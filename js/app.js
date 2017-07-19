@@ -36,9 +36,14 @@ var App = function() {
   this.canChangeCounter = true
   this.counter = JSON.parse(localStorage.getItem("counter")) || 50
 
-  this.playState = "paused"
-  this.animationName = "shake"
-  this.color = "white"
+  // this.style.playState = "paused"
+  // this.style.animationName = "shake"
+  // this.style.color = "white"
+  this.style = JSON.parse(localStorage.getItem("style")) || {
+    playState: "paused",
+    animationName: "shake",
+    color: "white"
+  }
 }
 
 App.prototype = {
@@ -49,47 +54,52 @@ App.prototype = {
   changeDisplayText: function(number) {
     switch(number) {
       case 49:
-        this.color = "white"
+        this.style.color = "white"
         break
       case 50: case 69:
-        this.color = "khaki"
+        this.style.color = "khaki"
         break
       case 70: case 79:
-        this.color = "gold"
-        this.playState = "paused"
+        this.style.color = "gold"
+        this.style.playState = "paused"
         break
       case 80: case 89:
-        this.color = "gold"
-        this.playState = "running"
-        this.animationName = "shake"
-        document.body.style.filter = "blur(0px)"
+        this.style.color = "gold"
+        this.style.playState = "running"
+        this.style.animationName = "shake"
+        this.style.filter = "blur(0px)"
         break
       case 90: case 94:
-        this.color = "orange"
-        this.animationName = "shake-with-blur"
+        this.style.color = "orange"
+        this.style.animationName = "shake-with-blur"
         break
       case 95: case 99:
-        this.color = "orangered"
-        this.playState = "running"
-        this.animationName = "shake-with-lots-of-blur"
+        this.style.color = "orangered"
+        this.style.playState = "running"
+        this.style.animationName = "shake-with-lots-of-blur"
         break
       case 100:
-        this.color = "red"
-        this.playState = "paused"
-        this.animationName = "shake"
-        document.body.style.filter = "blur(0px)"
+        this.style.color = "red"
+        this.style.playState = "paused"
+        this.style.animationName = "shake"
+        this.style.filter = "blur(0px)"
         break
     }
 
     if(this.canChangeCounter === false) {
-      document.body.style.filter = "blur(0px)"
-      this.playState = "paused"
-      this.animationName = "shake"
+      this.style.filter = "blur(0px)"
+      this.style.playState = "paused"
+      this.style.animationName = "shake"
     }
 
-    document.getElementById('counter-container').style.color = this.color
-    document.body.style.animationName = this.animationName
-    document.body.style.animationPlayState = this.playState
+    console.log(this)
+
+    document.getElementById('counter-container').style.color = this.style.color
+    document.body.style.animationName = this.style.animationName
+    document.body.style.animationPlayState = this.style.playState
+    document.body.style.filter = this.style.filter
+
+    localStorage.setItem("style", JSON.stringify(this.style))
 
     this.displayText.innerText = number
   },
