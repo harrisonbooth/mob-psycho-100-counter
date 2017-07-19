@@ -34,6 +34,20 @@ body {
   font-size: 0.5em;
 }
 
+#top-touch-box {
+  position: absolute;
+  top: 0;
+  height: 50%;
+  width: 100vw;
+}
+
+#bottom-touch-box {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100vw;
+}
+
 @font-face {
   font-family: 'Mob Psycho 100';
   src: url('fonts/Mob 200.eot');

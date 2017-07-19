@@ -19,14 +19,27 @@ var App = function() {
 
   var isOnMobile  = window.matchMedia("only screen and ( max-device-width: 750px )").matches
   if(isOnMobile) {
-    window.addEventListener("touchend", function(event) {
+    var topTouchBox = document.getElementById("top-touch-box")
+    var bottomTouchBox = document.getElementById("bottom-touch-box")
+
+    topTouchBox.addEventListener("touchend", function(event) {
       if(!this.canChangeCounter) return
-      if(event.y > window.innerHeight/2) {
-        this.changeCounter(this.decrementCounter)
-      } else {
-        this.changeCounter(this.incrementCounter)
-      }
+      this.changeCounter(this.incrementCounter)
     }.bind(this))
+
+    bottomTouchBox.addEventListener("touchend", function(event) {
+      if(!this.canChangeCounter) return
+      this.changeCounter(this.decrementCounter)
+    }.bind(this))
+
+    // window.addEventListener("touchend", function(event) {
+    //   if(!this.canChangeCounter) return
+    //   if(event.y > window.innerHeight/2) {
+    //     this.changeCounter(this.decrementCounter)
+    //   } else {
+    //     this.changeCounter(this.incrementCounter)
+    //   }
+    // }.bind(this))
   }
 
   this.canChangeCounter = true
