@@ -36,9 +36,7 @@ var App = function() {
   this.canChangeCounter = true
   this.counter = JSON.parse(localStorage.getItem("counter")) || 50
 
-  // this.style.playState = "paused"
-  // this.style.animationName = "shake"
-  // this.style.color = "white"
+
   this.style = JSON.parse(localStorage.getItem("style")) || {
     playState: "paused",
     animationName: "shake",
