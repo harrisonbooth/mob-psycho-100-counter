@@ -17,7 +17,7 @@ var App = function() {
     }
   }.bind(this))
 
-  var isOnMobile  = window.matchMedia("only screen and ( max-device-width: 750px )").matches
+  var isOnMobile = window.matchMedia("only screen and ( max-device-width: 750px )").matches
   if(isOnMobile) {
     var topTouchBox = document.getElementById("top-touch-box")
     var bottomTouchBox = document.getElementById("bottom-touch-box")
@@ -31,19 +31,10 @@ var App = function() {
       if(!this.canChangeCounter) return
       this.changeCounter(this.decrementCounter)
     }.bind(this))
-
-    // window.addEventListener("touchend", function(event) {
-    //   if(!this.canChangeCounter) return
-    //   if(event.y > window.innerHeight/2) {
-    //     this.changeCounter(this.decrementCounter)
-    //   } else {
-    //     this.changeCounter(this.incrementCounter)
-    //   }
-    // }.bind(this))
   }
 
   this.canChangeCounter = true
-  this.counter = 79
+  this.counter = JSON.parse(localStorage.getItem("counter")) || 50
 
   this.playState = "paused"
   this.animationName = "shake"
@@ -115,6 +106,7 @@ App.prototype = {
     }
 
     this.counter = newCounter
+    localStorage.setItem("counter", newCounter)
     this.render()
   },
 
