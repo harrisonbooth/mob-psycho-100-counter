@@ -108,3 +108,13 @@ body {
     filter: blur(5px);
   }
 }
+
+@media only screen and ( max-device-width: 750px ) {
+  #counter-display {
+    font-family: 'Mob Psycho 100';
+    font-size: 20em;
+    margin-top: 55%;
+    vertical-align: bottom;
+    transition-duration: 1s;
+  }
+}
