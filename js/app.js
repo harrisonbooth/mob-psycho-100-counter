@@ -131,7 +131,7 @@ App.prototype = {
   },
 
   play100PercentSound: function () {
-    var limitSound = new Audio('sounds/testSound.mp3');
+    var limitSound = new Audio('sounds/100PercentSound.mp3');
     limitSound.volume = 0.05;
     limitSound.currentTime = 0.1;
     limitSound.play();
