@@ -127,7 +127,7 @@ App.prototype = {
   playChangeSound: function () {
     var counterSound = new Audio('sounds/counterChangeBleep.mp3');
     counterSound.volume = 1;
-    counterSound.play();;
+    counterSound.play();
   },
 
   play100PercentSound: function () {
@@ -145,7 +145,7 @@ App.prototype = {
     setTimeout(function() {
       document.body.style.backgroundImage = "url('gif/mobFreakoutLonger.gif')";
       this.countDown();
-    }.bind(this), 1100);;
+    }.bind(this), 1100);
   },
 
   countDown: function() {
