@@ -143,7 +143,7 @@ App.prototype = {
   hitLimit: function () {
     this.play100PercentSound();
     setTimeout(function() {
-      document.body.style.backgroundImage = "url('gif/mobFreakoutLonger.gif')";
+      document.body.style.backgroundImage = "url('gif/mobFreakoutHD.gif')";
       this.countDown();
     }.bind(this), 1100);
   },
